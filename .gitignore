@@ -1,0 +1,12 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files & local test artifacts
+tmp_connection_check.txt
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db

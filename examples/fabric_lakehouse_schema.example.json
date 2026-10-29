@@ -1,0 +1,57 @@
+{
+  "system": "Microsoft Fabric Lakehouse",
+  "workspace": "Sales Analytics",
+  "lakehouse": "CuratedLakehouse",
+  "schema": "dbo",
+  "table": "Customers",
+  "retrieved_at": "2026-10-29T08:02:00Z",
+  "columns": [
+    {
+      "name": "CustomerId",
+      "data_type": "int",
+      "nullable": false,
+      "max_length": null,
+      "precision": 10,
+      "scale": 0,
+      "ordinal_position": 1
+    },
+    {
+      "name": "CustomerName",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 2
+    },
+    {
+      "name": "CreditLimit",
+      "data_type": "decimal",
+      "nullable": true,
+      "max_length": null,
+      "precision": 10,
+      "scale": 2,
+      "ordinal_position": 3
+    },
+    {
+      "name": "CountryCode",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 4
+    },
+    {
+      "name": "CreatedAt",
+      "data_type": "timestamp",
+      "nullable": false,
+      "max_length": null,
+      "precision": null,
+      "scale": 6,
+      "ordinal_position": 5
+    }
+  ],
+  "primary_key": null,
+  "foreign_keys": null
+}

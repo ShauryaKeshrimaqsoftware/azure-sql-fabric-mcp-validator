@@ -1,0 +1,50 @@
+{
+  "system": "Azure SQL Database",
+  "server": "example-server (label only)",
+  "database": "SalesDb",
+  "schema": "dbo",
+  "table": "Customers",
+  "retrieved_at": "2026-10-29T08:00:00Z",
+  "columns": [
+    {
+      "name": "CustomerId",
+      "data_type": "int",
+      "nullable": false,
+      "max_length": 4,
+      "precision": 10,
+      "scale": 0,
+      "ordinal_position": 1
+    },
+    {
+      "name": "CustomerName",
+      "data_type": "varchar",
+      "nullable": false,
+      "max_length": 100,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 2
+    },
+    {
+      "name": "CreditLimit",
+      "data_type": "decimal",
+      "nullable": true,
+      "max_length": 9,
+      "precision": 18,
+      "scale": 2,
+      "ordinal_position": 3
+    },
+    {
+      "name": "CreatedAt",
+      "data_type": "datetime2",
+      "nullable": false,
+      "max_length": 8,
+      "precision": 27,
+      "scale": 7,
+      "ordinal_position": 4
+    }
+  ],
+  "primary_key": [
+    "CustomerId"
+  ],
+  "foreign_keys": []
+}

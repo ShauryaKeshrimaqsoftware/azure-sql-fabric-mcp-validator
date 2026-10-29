@@ -1,0 +1,66 @@
+{
+  "system": "Microsoft Fabric Lakehouse",
+  "workspace": "My workspace",
+  "lakehouse": "EMPN2483_LH",
+  "schema": "dbo",
+  "table": "Area",
+  "retrieved_at": "2026-10-29T13:30:00+05:30",
+  "columns": [
+    {
+      "name": "Area_ID",
+      "data_type": "int",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 1
+    },
+    {
+      "name": "Area_Description",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 2
+    },
+    {
+      "name": "Product_Line",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 3
+    },
+    {
+      "name": "Created_Date",
+      "data_type": "timestamptz",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 4
+    },
+    {
+      "name": "Created_By",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 5
+    },
+    {
+      "name": "Active",
+      "data_type": "string",
+      "nullable": true,
+      "max_length": null,
+      "precision": null,
+      "scale": null,
+      "ordinal_position": 6
+    }
+  ],
+  "primary_key": [],
+  "foreign_keys": []
+}

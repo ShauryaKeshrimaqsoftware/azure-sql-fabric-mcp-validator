@@ -1,0 +1,5 @@
+Compare Azure SQL table dbo.Customers with the Customers table in my Fabric Lakehouse.
+Ask me for the Azure SQL database and Fabric workspace/Lakehouse/namespace if needed.
+Retrieve schema metadata using the connected MCP servers, compare column names, data types,
+nullability, lengths, precision and scale where available, and show the result as tables in chat.
+Do not read table rows or modify either source.

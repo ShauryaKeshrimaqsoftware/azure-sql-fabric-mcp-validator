@@ -1,0 +1,244 @@
+{
+  "version": "1.1",
+  "rules": [
+    {
+      "azure_sql": [
+        "bit"
+      ],
+      "fabric": [
+        "boolean",
+        "bool"
+      ],
+      "family": "boolean",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "bigint"
+      ],
+      "fabric": [
+        "long",
+        "bigint"
+      ],
+      "family": "int64",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "int",
+        "integer"
+      ],
+      "fabric": [
+        "int",
+        "integer"
+      ],
+      "family": "int32",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "smallint"
+      ],
+      "fabric": [
+        "short",
+        "smallint"
+      ],
+      "family": "int16",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "tinyint"
+      ],
+      "fabric": [
+        "short",
+        "smallint",
+        "int",
+        "integer"
+      ],
+      "family": "int16_widened",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "float",
+        "double precision"
+      ],
+      "fabric": [
+        "double",
+        "float64"
+      ],
+      "family": "float64",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "float"
+      ],
+      "fabric": [
+        "float"
+      ],
+      "family": "float_precision_caveat",
+      "compatibility": "COMPATIBLE_WITH_PRECISION_CAVEAT"
+    },
+    {
+      "azure_sql": [
+        "real"
+      ],
+      "fabric": [
+        "float",
+        "real",
+        "float32"
+      ],
+      "family": "float32",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "decimal",
+        "numeric"
+      ],
+      "fabric": [
+        "decimal",
+        "numeric"
+      ],
+      "family": "decimal",
+      "compatibility": "COMPATIBLE_WITH_ATTRIBUTES"
+    },
+    {
+      "azure_sql": [
+        "money",
+        "smallmoney"
+      ],
+      "fabric": [
+        "decimal",
+        "numeric"
+      ],
+      "family": "decimal",
+      "compatibility": "COMPATIBLE_WITH_ATTRIBUTES"
+    },
+    {
+      "azure_sql": [
+        "varchar",
+        "nvarchar",
+        "char",
+        "nchar",
+        "text",
+        "ntext"
+      ],
+      "fabric": [
+        "string",
+        "varchar",
+        "nvarchar",
+        "char"
+      ],
+      "family": "string",
+      "compatibility": "COMPATIBLE_WITH_LENGTH_CAVEAT"
+    },
+    {
+      "azure_sql": [
+        "xml"
+      ],
+      "fabric": [
+        "string"
+      ],
+      "family": "xml_string",
+      "compatibility": "COMPATIBLE_WITH_REPRESENTATION_CAVEAT"
+    },
+    {
+      "azure_sql": [
+        "date"
+      ],
+      "fabric": [
+        "date"
+      ],
+      "family": "date",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "datetime",
+        "datetime2",
+        "smalldatetime"
+      ],
+      "fabric": [
+        "timestamp",
+        "datetime",
+        "datetime2"
+      ],
+      "family": "timestamp",
+      "compatibility": "COMPATIBLE_WITH_PRECISION_CAVEAT"
+    },
+    {
+      "azure_sql": [
+        "time"
+      ],
+      "fabric": [
+        "time"
+      ],
+      "family": "time",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "binary",
+        "varbinary",
+        "image"
+      ],
+      "fabric": [
+        "binary",
+        "varbinary"
+      ],
+      "family": "binary",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "azure_sql": [
+        "uniqueidentifier"
+      ],
+      "fabric": [
+        "string",
+        "varchar",
+        "char"
+      ],
+      "family": "guid_string",
+      "compatibility": "COMPATIBLE_WITH_REPRESENTATION_CAVEAT"
+    },
+    {
+      "azure_sql": [
+        "geography",
+        "geometry",
+        "hierarchyid"
+      ],
+      "fabric": [
+        "string",
+        "binary",
+        "varbinary"
+      ],
+      "family": "spatial_string",
+      "compatibility": "COMPATIBLE_WITH_REPRESENTATION_CAVEAT"
+    }
+  ],
+  "explicitly_not_equivalent": [
+    {
+      "azure_sql": "tinyint",
+      "fabric": "byte",
+      "reason": "Unsigned SQL tinyint range (0 to 255) differs from signed Spark byte range (-128 to 127)."
+    },
+    {
+      "azure_sql": "datetimeoffset",
+      "fabric": "timestamp",
+      "reason": "Timezone-offset semantics may not be preserved by a basic Fabric timestamp."
+    },
+    {
+      "azure_sql": "timestamp",
+      "fabric": "timestamp",
+      "reason": "SQL Server timestamp is a rowversion synonym, not a date/time type."
+    },
+    {
+      "azure_sql": "rowversion",
+      "fabric": "timestamp",
+      "reason": "SQL Server rowversion is a binary version counter, not a date/time type."
+    }
+  ]
+}

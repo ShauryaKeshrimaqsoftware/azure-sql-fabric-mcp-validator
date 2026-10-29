@@ -1,0 +1,134 @@
+{
+  "generated_at_utc": "2026-10-29T09:52:14+00:00",
+  "comparison": {
+    "azure_sql": {
+      "system": "Azure SQL Database",
+      "server": "example-server (label only)",
+      "database": "SalesDb",
+      "schema": "dbo",
+      "table": "Customers",
+      "retrieved_at": "2026-10-29T08:00:00Z",
+      "workspace": null,
+      "lakehouse": null
+    },
+    "fabric": {
+      "system": "Microsoft Fabric Lakehouse",
+      "server": null,
+      "database": null,
+      "schema": "dbo",
+      "table": "Customers",
+      "retrieved_at": "2026-10-29T08:02:00Z",
+      "workspace": "Sales Analytics",
+      "lakehouse": "CuratedLakehouse"
+    }
+  },
+  "summary": {
+    "azure_sql_column_count": 4,
+    "fabric_column_count": 5,
+    "column_findings": {
+      "MATCH": 1,
+      "COMPATIBLE": 0,
+      "MISMATCH": 3,
+      "MISSING IN FABRIC": 0,
+      "EXTRA IN FABRIC": 1,
+      "UNKNOWN": 0
+    },
+    "column_order_differences": 1,
+    "overall_status": "DIFFERENCES FOUND"
+  },
+  "missing_in_fabric": [],
+  "extra_in_fabric": [
+    {
+      "column": "CountryCode",
+      "fabric_type": "string",
+      "status": "EXTRA IN FABRIC",
+      "details": "Column exists only in Fabric."
+    }
+  ],
+  "columns_removed_in_fabric": [],
+  "columns_added_in_fabric": [
+    {
+      "column": "CountryCode",
+      "fabric_type": "string",
+      "status": "EXTRA IN FABRIC",
+      "details": "Column exists only in Fabric."
+    }
+  ],
+  "columns": [
+    {
+      "column": "CountryCode",
+      "azure_sql_type": "—",
+      "fabric_type": "string",
+      "nullability": "NOT COMPARABLE",
+      "attributes": "NOT COMPARABLE",
+      "status": "EXTRA IN FABRIC",
+      "details": "Column exists only in Fabric."
+    },
+    {
+      "column": "CreatedAt",
+      "azure_sql_type": "datetime2",
+      "fabric_type": "timestamp",
+      "nullability": "False / False",
+      "attributes": "scale 7 vs 6",
+      "status": "MISMATCH",
+      "details": "Date/time types map to a timestamp family; inspect precision/time semantics. Scale differs: Azure SQL=7, Fabric=6."
+    },
+    {
+      "column": "CreditLimit",
+      "azure_sql_type": "decimal",
+      "fabric_type": "decimal",
+      "nullability": "True / True",
+      "attributes": "precision 18 vs 10",
+      "status": "MISMATCH",
+      "details": "Normalized data type names match. Precision differs: Azure SQL=18, Fabric=10."
+    },
+    {
+      "column": "CustomerId",
+      "azure_sql_type": "int",
+      "fabric_type": "int",
+      "nullability": "False / False",
+      "attributes": "No comparable length/precision/scale difference detected.",
+      "status": "MATCH",
+      "details": "Normalized data type names match."
+    },
+    {
+      "column": "CustomerName",
+      "azure_sql_type": "varchar",
+      "fabric_type": "string",
+      "nullability": "False / True",
+      "attributes": "Azure SQL length limit 100 is not exposed/enforced by Fabric metadata",
+      "status": "MISMATCH",
+      "details": "Compatible string representation; a source length limit may not be enforced by Fabric string. Nullable differs: Azure SQL=False, Fabric=True."
+    }
+  ],
+  "column_order_differences": [
+    {
+      "column": "CreatedAt",
+      "azure_sql": 4,
+      "fabric": 5
+    }
+  ],
+  "key_comparison": [
+    {
+      "property": "Primary key",
+      "azure_sql": [
+        "CustomerId"
+      ],
+      "fabric": null,
+      "status": "NOT AVAILABLE",
+      "details": "One or both endpoints did not provide this metadata."
+    },
+    {
+      "property": "Foreign keys",
+      "azure_sql": [],
+      "fabric": null,
+      "status": "NOT AVAILABLE",
+      "details": "One or both endpoints did not provide this metadata."
+    }
+  ],
+  "warnings": [
+    "This is a metadata comparison, not a row-data comparison.",
+    "Type-family compatibility is not proof of lossless conversion.",
+    "If type, nullability, length, precision, scale or key metadata was unavailable, results are partial."
+  ]
+}
